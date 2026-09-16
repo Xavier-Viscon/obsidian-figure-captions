@@ -1,0 +1,42 @@
+.obsidian-figure {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: var(--figure-caption-spacing, 1.5em) auto;
+  text-align: center;
+}
+
+.obsidian-figure img {
+  display: block;
+
+  max-width: 100%;
+  height: auto;
+
+  border-radius: var(--figure-caption-image-radius, 20px);
+
+  box-shadow: var(--figure-caption-image-shadow, 0 8px 20px rgba(0, 0, 0, 0.18));
+}
+
+.obsidian-figure-caption {
+  display: block;
+
+  margin-top: 0.8em;
+
+  color: var(--text-muted);
+
+  font-size: var(--figure-caption-size, 0.9em);
+  line-height: 1.4;
+
+  text-align: center;
+}
+
+.obsidian-figure .figure-number {
+  font-weight: 600;
+  color: var(--text-normal);
+}
+
+.obsidian-figure .figure-separator {
+  color: var(--text-muted);
+}
+
+

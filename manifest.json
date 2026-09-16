@@ -1,0 +1,9 @@
+{
+  "id": "obsidian-figure-captions",
+  "name": "Figure Captions",
+  "version": "0.1.3",
+  "minAppVersion": "1.5.0",
+  "description": "Automatically numbers images and displays their alt text as figure captions.",
+  "author": "Xavier Reparon",
+  "isDesktopOnly": false
+}
