@@ -1,17 +1,6 @@
 # Obsidian figure numbers plugin
 This plugin adds figure numbers to your figures as well as figure captions and custom styling.
 
-## Settings
-
-Open **Settings → Community plugins → Figure Captions** to customize:
-
-- Image corner radius
-- Image shadow visibility, softness, and opacity
-- Caption size
-- Spacing around figures
-
-Changes are saved automatically and apply to both Live Preview and Reading View.
-
 ## Installation guide
 Check if you have node js and npm installed. If not, make sure to download it.
 ```
@@ -49,3 +38,22 @@ cd /obsidian-figure-captions
 npm run build
 ```
 You should then see the plugin appear in the community plugins tab in obsidian.
+
+## Using the plugin
+The plugin is very simple. You can just add the following markdown in you document.
+
+```
+![caption](Image.png)
+```
+
+
+## Settings
+
+Open **Settings → Community plugins → Figure Captions** to customize:
+
+- Image corner radius
+- Image shadow visibility, softness, and opacity
+- Caption size
+- Spacing around figures
+
+Changes are saved automatically and apply to both Live Preview and Reading View.
