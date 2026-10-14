@@ -19,6 +19,12 @@
   box-shadow: var(--figure-caption-image-shadow, 0 8px 20px rgba(0, 0, 0, 0.18));
 }
 
+@media print {
+  .obsidian-figure img {
+    max-height: var(--figure-caption-image-max-height, 600px) !important;
+  }
+}
+
 .obsidian-figure-caption {
   display: block;
 

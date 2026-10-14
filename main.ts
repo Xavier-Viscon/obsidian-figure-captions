@@ -297,6 +297,7 @@ export default class FigureCaptionsPlugin extends Plugin {
 
   private applySettings() {
     const root = document.documentElement;
+    const imageMaxHeight = `${this.settings.imageMaxHeight}px`;
 
     root.style.setProperty(
       "--figure-caption-image-radius",
@@ -304,8 +305,13 @@ export default class FigureCaptionsPlugin extends Plugin {
     );
     root.style.setProperty(
       "--figure-caption-image-max-height",
-      `${this.settings.imageMaxHeight}px`,
+      imageMaxHeight,
     );
+    document
+      .querySelectorAll<HTMLImageElement>(".obsidian-figure img")
+      .forEach((image) => {
+        image.style.setProperty("max-height", imageMaxHeight, "important");
+      });
     root.style.setProperty(
       "--figure-caption-image-shadow",
       this.settings.shadowEnabled
@@ -409,6 +415,12 @@ export default class FigureCaptionsPlugin extends Plugin {
         if (!caption) {
           continue;
         }
+
+        image.style.setProperty(
+          "max-height",
+          `${this.settings.imageMaxHeight}px`,
+          "important",
+        );
 
         const figureNumber =
           documentFigures
