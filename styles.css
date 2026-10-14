@@ -8,6 +8,7 @@
 
 .obsidian-figure img {
   display: block;
+  margin-inline: auto;
 
   max-width: 95%;
   height: auto;
