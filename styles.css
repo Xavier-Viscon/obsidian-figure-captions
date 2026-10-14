@@ -11,6 +11,7 @@
 
   max-width: 95%;
   height: auto;
+  max-height: var(--figure-caption-image-max-height, 600px);
 
   border-radius: var(--figure-caption-image-radius, 20px);
 

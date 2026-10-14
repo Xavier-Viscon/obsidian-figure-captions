@@ -38,6 +38,7 @@ interface FigureMatch extends RawFigureMatch {
 
 interface FigureCaptionsSettings {
   imageRadius: number;
+  imageMaxHeight: number;
   shadowEnabled: boolean;
   shadowBlur: number;
   shadowOpacity: number;
@@ -47,6 +48,7 @@ interface FigureCaptionsSettings {
 
 const DEFAULT_SETTINGS: FigureCaptionsSettings = {
   imageRadius: 20,
+  imageMaxHeight: 600,
   shadowEnabled: true,
   shadowBlur: 20,
   shadowOpacity: 18,
@@ -301,6 +303,10 @@ export default class FigureCaptionsPlugin extends Plugin {
       `${this.settings.imageRadius}px`,
     );
     root.style.setProperty(
+      "--figure-caption-image-max-height",
+      `${this.settings.imageMaxHeight}px`,
+    );
+    root.style.setProperty(
       "--figure-caption-image-shadow",
       this.settings.shadowEnabled
         ? `0 8px ${this.settings.shadowBlur}px rgba(0, 0, 0, ${this.settings.shadowOpacity / 100})`
@@ -320,6 +326,7 @@ export default class FigureCaptionsPlugin extends Plugin {
     const root = document.documentElement;
 
     root.style.removeProperty("--figure-caption-image-radius");
+    root.style.removeProperty("--figure-caption-image-max-height");
     root.style.removeProperty("--figure-caption-image-shadow");
     root.style.removeProperty("--figure-caption-size");
     root.style.removeProperty("--figure-caption-spacing");
@@ -514,6 +521,20 @@ class FigureCaptionsSettingTab extends PluginSettingTab {
           .setDynamicTooltip()
           .onChange((value) => {
             this.plugin.settings.imageRadius = value;
+            void this.plugin.saveSettings();
+          }),
+      );
+
+    new Setting(containerEl)
+      .setName("Image max height")
+      .setDesc("Limit the height of figure images in pixels.")
+      .addSlider((slider) =>
+        slider
+          .setLimits(100, 1600, 50)
+          .setValue(this.plugin.settings.imageMaxHeight)
+          .setDynamicTooltip()
+          .onChange((value) => {
+            this.plugin.settings.imageMaxHeight = value;
             void this.plugin.saveSettings();
           }),
       );

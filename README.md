@@ -52,6 +52,7 @@ The plugin is very simple. You can just add the following markdown in you docume
 Open **Settings → Community plugins → Figure Captions** to customize:
 
 - Image corner radius
+- Image maximum height
 - Image shadow visibility, softness, and opacity
 - Caption size
 - Spacing around figures
